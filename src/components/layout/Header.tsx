@@ -2,6 +2,7 @@ import {
   Box,
   Flex,
   Text,
+  Image,
   IconButton,
   Button,
   Stack,
@@ -27,12 +28,10 @@ export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box padding='5'>
+    <Box pt="5" px={{ base: "5", md: "10" }}>
       <Flex
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
         align={"center"}
       >
         <Flex
@@ -49,17 +48,28 @@ export default function Header() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Text
-          flex={{ base: 1,md: 0.5 }}
+        <Stack
+          spacing="2"
+          direction={"row"}
+          flex={{ base: 1, md: 0.5 }}
           justify={{ base: "center", md: "start" }}
           textAlign={useBreakpointValue({ base: "center", md: "left" })}
-          fontFamily={"heading"}
-          fontWeight={550}
-          fontSize='xl'
-          color={useColorModeValue("green.400", "white")}
         >
-          ShopyFast
-        </Text>
+          <Image
+            src="/abstract.svg"
+            height={12}
+            alt="Icon"
+          />
+          <Text
+            pt='2'
+            fontFamily={"heading"}
+            fontWeight={550}
+            fontSize="lg"
+            color={useColorModeValue("gray.700", "white")}
+          >
+            ShopyFast
+          </Text>
+        </Stack>
         <DesktopNav />
 
         <Stack
@@ -81,13 +91,11 @@ export default function Header() {
           <Button
             display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
-            padding='6'
-            rounded={'full'}
+            padding="6"
+            rounded={"full"}
             fontWeight={550}
             color={"green.400"}
-            boxShadow={
-              'lg'
-            }
+            boxShadow={"lg"}
             bg={"white"}
             href={"#"}
             _hover={{
@@ -109,7 +117,7 @@ export default function Header() {
 const DesktopNav = () => {
   return (
     <Stack
-     justify={{ base: "center", md: "center" }}
+      justify={{ base: "center", md: "center" }}
       direction={"row"}
       spacing={5}
       display={{ base: "none", md: "flex" }}
@@ -301,10 +309,6 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: "Pricing",
-    href: "#",
-  },
-  {
-    label: "Use Cases",
     href: "#",
   },
   {

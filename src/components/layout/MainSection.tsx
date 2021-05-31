@@ -47,19 +47,23 @@ export default function MainSection() {
           </Text>
 
           <Stack
-            direction={"row"}
+            direction={{base:'column',md:'row'}}
             spacing={10}
             align={"center"}
             alignSelf={"center"}
             position={"relative"}
           >
             <Button
-              fontSize={"smaller"}
-              padding="6"
+              fontSize={{base:'sm',md:'md'}}
+              px='8'
+              py='6'
               colorScheme={"green"}
               bg={"green.400"}
               rounded={"full"}
-              fontWeight={550}
+              fontWeight={520}
+              boxShadow={
+                'xl'
+              }
               _hover={{
                 bg: "green.500",
               }}
@@ -67,12 +71,12 @@ export default function MainSection() {
               Get Started
             </Button>
             <Button
-              fontSize={"smaller"}
+              fontSize={{base:'sm',md:'md'}}
               padding="6"
               rounded={"full"}
-              fontWeight={550}
+              fontWeight={520}
               color={"green.400"}
-              boxShadow={"lg"}
+              boxShadow={"xl"}
               bg={"white"}
               href={"#"}
               _hover={{
